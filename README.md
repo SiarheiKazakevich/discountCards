@@ -1,1 +1,1 @@
-# discountCards
+https://siarheikazakevich.github.io/discountCards/
