@@ -1,8 +1,8 @@
 const photos = {
-  "biedronka": 3,
-  "lidl": 2
-  //"2024-10-10": 6,
-  //"2024-11-11": 3
+  "biedronka": 5,
+  "lidl": 2,
+  "maxima": 1,
+  "sanifair": 3
 };
 
 // элементы
