@@ -30,8 +30,13 @@ function loadImages(date) {
 
     // Формируем путь. Важное: проверь, что в проекте файлы действительно называются так.
     // Попробуй сначала .jpg, если нет — .webp или .png
-    img.src = `./photos/${date}/${i}.jpg`;
+    img.src = `./photos/${date}/${i}.webp`;
     img.alt = `${date} - ${i}`;
+    // 🟢 Если WebP не найден — грузим JPG
+    img.onerror = () => {                   // 🟢 ДОБАВЛЕНО
+      img.onerror = null;                   // чтобы не уйти в цикл
+      img.src = `./photos/${date}/${i}.jpg`;
+    };
     // если хочешь — добавить обработчик ошибки подмены расширения:
     /*img.addEventListener('error', () => {
      // попробуем webp, если jpg не найден
