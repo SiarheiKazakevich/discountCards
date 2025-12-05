@@ -1,8 +1,8 @@
 const photos = {
   "biedronka": 5,
   "lidl": 21,
-  "maxima": 2,
-  "sanifair": 3
+  "maxima": 3,
+  "sanifair": 1
 };
 
 // элементы
