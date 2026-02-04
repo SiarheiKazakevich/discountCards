@@ -1,10 +1,12 @@
 const photos = {
-  "biedronka": 8,
-  "lidl": 26,
+  "biedronka": 11,
+  "lidl": 28,
   "maxima": 5,
-  "kaufland": 1,
+  "kaufland": 2,
+  "netto": 1,
   "billa": 1,
-  "auchan": 1
+  "auchan": 1,
+  "promo": 2
 };
 
 // элементы
