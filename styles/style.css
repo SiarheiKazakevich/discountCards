@@ -115,3 +115,42 @@ img {
 .next {
   right: 10px;
 }
+
+/* -------footer--------- */
+.footer {
+  /*
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;*/
+  /*background: #333;*/
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+  /*  backdrop-filter: blur(12px);
+   размытие 
+  -webkit-backdrop-filter: blur(12px);*/
+  /* для Safari */
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1005;
+  margin-top: auto;
+}
+
+.footer .icon img {
+  width: 35px;
+  height: 35px;
+  transition: 0.2s;
+}
+
+.footer .icon img:hover {
+  transform: scale(1.2);
+}
+
+.footertext {
+  font-size: 16px;
+  color: rgba(16, 16, 16, 0.5);
+}
