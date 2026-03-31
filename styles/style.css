@@ -7,6 +7,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  min-height: 100vh;
 }
 
 /* Авто-тема */

@@ -6,12 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>discountCards</title>
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/style2.css">
   <link rel="icon" href="./photos/icon4.webp" type="icon">
 </head>
 
 <body>
-  <h1>discountCards</h1>
-  <label for="dateSelect">Выбери торговую сеть:</label>
+  <!------add header and menu-->
+  <header>
+    <div class="logo"></div>
+    <h1>discountCards</h1>
+    <div class="burger" id="burger" onclick="toggleMenu()">
+      <div class="t"></div>
+      <div class="t"></div>
+      <div class="t"></div>
+    </div>
+  </header>
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+  <nav id="menu">
+    <a class="menulink1" href="index2.html#QRcode">QR-code сайта</a>
+    <!--<a href="">О нас</a>-->
+    <a class="menulink" href="https://siarheikazakevich.github.io/truckfarer/">паркинги для грузовиков</a>
+
+    <!--<a href="">Контакты</a>-->
+  </nav>
+  <!--add finish-->
+  <h1 class="displaynone">discountCards</h1>
+  <label for="dateSelect" class="labelstyle">Выбери торговую сеть:</label>
   <select name="fotos" id="dateSelect"></select>
   <div class="carousel" id="carousel">
     <button class="btn prev">&#8249;</button>
@@ -30,6 +50,7 @@
     </a>
   </footer>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/script2.js"></script>
 </body>
 
 </html>
