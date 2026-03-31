@@ -1,0 +1,133 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: var(--bg);
+  color: rgb(11, 11, 11);
+  position: relative;
+  z-index: 1002;
+  margin: 0px 0px 20px 0px;
+}
+
+header.active {
+  background: rgba(0, 0, 0, 0.0);
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  background-image: url('../photos/logo.webp');
+  background-size: cover;
+  background-position: center;
+  margin-right: -10px;
+  margin-right: -10px;
+}
+
+header h1 {
+  text-align: center;
+  font-size: clamp(16px, 5vw, 48px);
+  margin: 0px 0px 0px 0px;
+}
+
+.burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1003;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: rgb(17, 16, 16);
+  transition: 0.3s;
+}
+
+.burger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: rgba(68, 68, 68, 0.9);
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 1001;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+nav a {
+  display: block;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  margin: 0px 0px 0px 0px;
+  text-align: center;
+
+}
+
+nav a:hover {
+  background: #555;
+}
+
+nav.active {
+  left: 0;
+}
+
+.menulink1 {
+  margin: 130px 0px 0px 0px;
+}
+
+.menulink1:hover,
+.menulink:hover {
+  color: #0056b3;
+}
+
+.displaynone {
+  display: none;
+}
+
+.labelstyle {
+  font-size: 18px;
+}
+
+/*-----------------адаптация---------------*/
+@media (max-width: 768px) {
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+}
