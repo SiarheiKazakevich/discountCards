@@ -9,7 +9,8 @@ const photos = {
   "auchan": 1,
   "promo": 2,
   "dm": 1,
-  "E.Leclerc": 1
+  "E.Leclerc": 1,
+  "kik": 1
 };
 
 // элементы
