@@ -3,12 +3,13 @@ const photos = {
   "lidl": 29,
   "maxima": 6,
   "iki": 1,
-  "kaufland": 2,
+  "kaufland": 3,
   "netto": 1,
   "billa": 1,
   "auchan": 1,
   "promo": 2,
-  "dm": 1
+  "dm": 1,
+  "E.Leclerc": 1
 };
 
 // элементы
