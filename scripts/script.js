@@ -1,5 +1,5 @@
 const photos = {
-  "biedronka": 11,
+  "biedronka": 12,
   "lidl": 29,
   "maxima": 6,
   "iki": 1,
@@ -7,7 +7,8 @@ const photos = {
   "netto": 1,
   "billa": 1,
   "auchan": 1,
-  "promo": 2
+  "promo": 2,
+  "dm": 1
 };
 
 // элементы
