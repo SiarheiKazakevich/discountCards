@@ -10,7 +10,8 @@ const photos = {
   "promo": 2,
   "dm": 1,
   "E.Leclerc": 1,
-  "kik": 1
+  "kik": 1,
+  "tigros": 1
 };
 
 // элементы
