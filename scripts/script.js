@@ -1,5 +1,5 @@
 const photos = {
-  "biedronka": 15,
+  "biedronka": 17,
   "lidl": 40,
   "maxima": 9,
   "iki": 1,
