@@ -117,6 +117,30 @@ img {
   right: 10px;
 }
 
+.arrowleft {
+  color: white;
+  /*font-size: 42;
+  -webkit-text-stroke: 0.5px #00ff00;*/
+  font-weight: bold;
+  text-shadow:
+    -2px 0 #00ff00;
+}
+
+.arrowright {
+  color: white;
+  /*font-size: 42;
+  -webkit-text-stroke: 0.5px #00ff00;*/
+  font-weight: bold;
+  text-shadow:
+    2px 0 #00ff00;
+}
+
+
+/* Скрываем стрелки, когда переход невозможен */
+.carousel .btn[hidden] {
+  display: none !important;
+}
+
 /* -------footer--------- */
 .footer {
   /*

@@ -65,13 +65,28 @@ function loadImages(date) {
 // обновляем позицию слайда
 function updateSlide() {
   const slides = track.children.length;
+
+  //добавляем переменные
+  const prevButton = document.querySelector(".prev");
+  const nextButton = document.querySelector(".next");
+
+
   if (slides === 0) {
     track.style.transform = `translateX(0%)`;
+    // Нет фотографий — скрываем обе стрелки
+    prevButton.hidden = true;
+    nextButton.hidden = true;
     return;
   }
   // ограничиваем currentIndex
+  // Не выходим за пределы слайдов
   currentIndex = Math.max(0, Math.min(currentIndex, slides - 1));
+  // Перемещаем слайдер
   track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+  // Показываем стрелки только при наличии соседнего слайда
+  prevButton.hidden = currentIndex === 0;
+  nextButton.hidden = currentIndex === slides - 1;
 }
 
 // кнопки
