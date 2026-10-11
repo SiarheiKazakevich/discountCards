@@ -108,6 +108,13 @@ img {
   z-index: 2;
 }
 
+.btnright {
+  border-radius: 10% 50% 50% 10%;
+}
+
+.btnleft {
+  border-radius: 50% 10% 10% 50%;
+}
 
 .prev {
   left: 10px;
@@ -119,20 +126,20 @@ img {
 
 .arrowleft {
   color: white;
-  /*font-size: 42;
-  -webkit-text-stroke: 0.5px #00ff00;*/
   font-weight: bold;
+  /*font-size: 42;
+  -webkit-text-stroke: 0.5px #00ff00;
   text-shadow:
-    -2px 0 #00ff00;
+    -2px 0 #00ff00;*/
 }
 
 .arrowright {
   color: white;
-  /*font-size: 42;
-  -webkit-text-stroke: 0.5px #00ff00;*/
   font-weight: bold;
+  /*font-size: 42;
+  -webkit-text-stroke: 0.5px #00ff00;
   text-shadow:
-    2px 0 #00ff00;
+    2px 0 #00ff00;*/
 }
 
 
