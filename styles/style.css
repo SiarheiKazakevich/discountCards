@@ -148,6 +148,76 @@ img {
   display: none !important;
 }
 
+/* Индикатор фотографий */
+.carousel-indicator {
+  /* position: absolute;
+  transform: translateX(-50%);*/
+  z-index: 3;
+  bottom: 0px;
+  left: 50%;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  max-width: calc(100% -24px);
+  padding: 8px 13px;
+  border-radius: 20px;
+
+  color: #fff;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  font-size: 13px;
+  line-height: 1.2;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.carousel-indicator[hidden] {
+  display: none !important;
+}
+
+/* контейнер точек*/
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  min-width: 7px;
+  padding: 0px;
+
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.48);
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* активная точка*/
+.carousel-dot.active {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+.carousel-dot:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+
+
 /* -------footer--------- */
 .footer {
   /*

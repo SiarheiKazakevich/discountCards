@@ -69,13 +69,16 @@ function updateSlide() {
   //добавляем переменные
   const prevButton = document.querySelector(".prev");
   const nextButton = document.querySelector(".next");
+  const indicator = document.getElementById("carouselIndicator");
 
 
+  // если фотографий нет
   if (slides === 0) {
     track.style.transform = `translateX(0%)`;
     // Нет фотографий — скрываем обе стрелки
     prevButton.hidden = true;
     nextButton.hidden = true;
+    indicator.hidden = true;
     return;
   }
   // ограничиваем currentIndex
@@ -87,7 +90,54 @@ function updateSlide() {
   // Показываем стрелки только при наличии соседнего слайда
   prevButton.hidden = currentIndex === 0;
   nextButton.hidden = currentIndex === slides - 1;
+
+  //для одной фотографии индикатор не нужен
+  indicator.innerHTML = "";
+
+  if (slides <= 1) {
+    indicator.hidden = true;
+    return;
+  }
+  indicator.hidden = false;
+
+  //номер фотографии
+  const label = document.createElement("span");
+  label.textContent = `Фото ${currentIndex + 1} из ${slides}`;
+  indicator.appendChild(label);
+
+  //контейнер точек
+  const dots = document.createElement("div");
+  dots.className = "carousel-dots";
+
+  //Показываем максимум 7 точек,
+  //чтобы слайдер оставался компактным даже при 47 фото
+
+  const maxDots = 7;
+  const start = Math.max(
+    0,
+    Math.min(currentIndex - 3, slides - maxDots)
+  );
+  const end = Math.min(slides, start + maxDots);
+
+  for (let i = start; i < end; i++) {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "carousel-dot";
+    dot.setAttribute("aria-label", `Фото ${i + 1}`);
+
+    if (i === currentIndex) {
+      dot.classList.add("active");
+      dot.setAttribute("aria-current", "true");
+    }
+    dot.onclick = () => {
+      currentIndex = i;
+      updateSlide();
+    };
+    dots.appendChild(dot);
+  }
+  indicator.appendChild(dots);
 }
+
 
 // кнопки
 document.querySelector(".prev").onclick = () => {
