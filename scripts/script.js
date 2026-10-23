@@ -13,6 +13,30 @@ const photos = {
   "kik": 1,
   "tigros": 1
 };
+const translations = {
+  ru: {
+    language: "Язык:",
+    chooseStore: "Выбери торговую сеть:",
+    siteQR: "QR-code сайта",
+    truckParking: "Паркинги для грузовиков",
+    addCard: "Добавьте свою скидочную карту:",
+    photo: "Фото",
+    of: "из",
+    photoLabel: "Фото"
+  },
+  en: {
+    language: "Language:",
+    chooseStore: "Choose a store:",
+    siteQR: "Website QR code",
+    truckParking: "Truck parking",
+    addCard: "Add your loyalty card:",
+    photo: "Photo",
+    of: "of",
+    photoLabel: "Photo"
+  }
+};
+let currentLanguage =
+  localStorage.getItem("discountCardsLanguage") || "ru";
 
 // элементы
 const dateSelect = document.getElementById("dateSelect");
@@ -102,7 +126,8 @@ function updateSlide() {
 
   //номер фотографии
   const label = document.createElement("span");
-  label.textContent = `Фото ${currentIndex + 1} из ${slides}`;
+  const t = translations[currentLanguage];
+  label.textContent = `${t.photo} ${currentIndex + 1} ${t.of} ${slides}`;
   indicator.appendChild(label);
 
   //контейнер точек
@@ -123,7 +148,9 @@ function updateSlide() {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.className = "carousel-dot";
-    dot.setAttribute("aria-label", `Фото ${i + 1}`);
+    dot.setAttribute("aria-label",
+      `${translations[currentLanguage].photoLabel} ${i + 1}`
+    );
 
     if (i === currentIndex) {
       dot.classList.add("active");
@@ -137,6 +164,51 @@ function updateSlide() {
   }
   indicator.appendChild(dots);
 }
+
+//добавляем переключатель языка
+function applyLanguage(language) {
+  if (!translations[language]) return;
+
+  currentLanguage = language;
+  localStorage.setItem("discountCardsLanguage", language);
+  // язык документа и заголовок вкладки
+  document.documentElement.lang = language;
+  document.title = "discountCards";
+  //переводим все статические элементы
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    if (translations[language][key] !== undefined) {
+      element.textContent = translations[language][key];
+    }
+  });
+  //подсвечиваем выбранный язык
+  document.querySelectorAll(".language-btn").forEach(button => {
+    const active = button.dataset.lang === language;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  //обновляем счетчик и подписи точек
+  updateSlide();
+}
+
+//обработчики переключателя языка
+document.querySelectorAll(".language-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    applyLanguage(button.dataset.lang);
+    //Закрываем меню после выбора языка
+    const menu = document.getElementById("menu");
+    if (
+      menu &&
+      menu.classList.contains("active") &&
+      typeof toggleMenu === "function"
+    ) {
+      toggleMenu();
+    }
+  });
+});
+// восстанавливаем сохраненный язык
+applyLanguage(currentLanguage);
+
 
 
 // кнопки

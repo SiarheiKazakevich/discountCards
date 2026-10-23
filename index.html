@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -23,15 +23,21 @@
   </header>
   <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
   <nav id="menu">
-    <a class="menulink1" href="https://siarheikazakevich.github.io/truckfarer/index2.html#QRcode">QR-code сайта</a>
+    <a class="menulink1" href="https://siarheikazakevich.github.io/truckfarer/index2.html#QRcode"
+      data-i18n="siteQR">QR-code сайта</a>
     <!--<a href="">О нас</a>-->
-    <a class="menulink" href="https://siarheikazakevich.github.io/truckfarer/">паркинги для грузовиков</a>
-
+    <a class="menulink" href="https://siarheikazakevich.github.io/truckfarer/" data-i18n="truckParking">паркинги для
+      грузовиков</a>
+    <div class="language-switcher">
+      <span data-i18n="language">Язык:</span>
+      <button type="button" class="language-btn" data-lang="ru">RU</button>
+      <button type="button" class="language-btn" data-lang="en">EN</button>
+    </div>
     <!--<a href="">Контакты</a>-->
   </nav>
   <!--add finish-->
   <h1 class="displaynone">discountCards</h1>
-  <label for="dateSelect" class="labelstyle">Выбери торговую сеть:</label>
+  <label for="dateSelect" class="labelstyle" data-i18n="chooseStore">Выбери торговую сеть:</label>
   <select name="fotos" id="dateSelect" translate="no"></select>
   <div class="carousel" id="carousel">
     <button class="btn btnleft prev">
@@ -51,7 +57,7 @@
   <!--  добавляем название и счетчик фото -->
   <div class="carousel-indicator" id="carouselIndicator" aria-live="polite"></div>
   <footer class="footer">
-    <h4 class="footertext">Добавьте свою скидочную карту:</h4>
+    <h4 class="footertext" data-i18n="addCard">Добавьте свою скидочную карту:</h4>
     <a href="https://wa.me/+375291555973" target="_blank" class="icon whatsapp">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     </a>

@@ -133,3 +133,28 @@ nav.active {
     height: 60px;
   }
 }
+
+
+/*Блок выбора языка внутри бургер-меню*/
+nav .language-switcher {
+  margin: 20px 10px 0;
+  padding: 15px 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  flex-direction: row;
+  gap: 8px;
+}
+
+nav .language-switcher span {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav .language-btn {
+  min-width: 55px;
+}
+
+@media (max-width: 768px) {
+  nav .language-switcher {
+    margin-top: 15px;
+  }
+}
