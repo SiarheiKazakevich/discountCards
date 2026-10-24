@@ -170,6 +170,11 @@ function applyLanguage(language) {
   if (!translations[language]) return;
 
   currentLanguage = language;
+  const languageBadge = document.getElementById("burgerLanguageBadge");
+  if (languageBadge) {
+    languageBadge.textContent = language.toUpperCase()
+  }
+
   localStorage.setItem("discountCardsLanguage", language);
   // язык документа и заголовок вкладки
   document.documentElement.lang = language;

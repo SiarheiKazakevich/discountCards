@@ -152,6 +152,39 @@ nav .language-switcher span {
 nav .language-btn {
   min-width: 55px;
 }
+/* Бейдж текущего языка на иконке бургер-меню */
+#burger{
+  position: relative;
+}
+#burger .burger-language-badge{
+  position: absolute;
+  top: -7px;
+  right: -10px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 23px;
+  height: 15px;
+  padding: 0;
+
+  background: #2563eb;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+  box-sizing: border-box;
+  white-space: nowrap;
+  transform: none;
+}
 
 @media (max-width: 768px) {
   nav .language-switcher {
