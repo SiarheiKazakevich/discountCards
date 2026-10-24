@@ -33,10 +33,33 @@ const translations = {
     photo: "Photo",
     of: "of",
     photoLabel: "Photo"
+  },
+  be: {
+    language: "Мова:",
+    chooseStore: "Выберыце гандлёвую сетку:",
+    siteQR: "QR-код сайта",
+    truckParking: "Паркоўкі для грузавікоў",
+    addCard: "Дадайце сваю дысконтную картку:",
+    photo: "Фота",
+    of: "з",
+    photoLabel: "Фота"
+  },
+  uk: {
+    language: "Мова:",
+    chooseStore: "Оберіть торговельну мережу:",
+    siteQR: "QR-код сайту",
+    truckParking: "Паркінги для вантажівок",
+    addCard: "Додайте свою дисконтну картку:",
+    photo: "Фото",
+    of: "із",
+    photoLabel: "Фото"
   }
 };
 let currentLanguage =
   localStorage.getItem("discountCardsLanguage") || "ru";
+if (!translations[currentLanguage]) {
+  currentLanguage = "ru";
+}
 
 // элементы
 const dateSelect = document.getElementById("dateSelect");
